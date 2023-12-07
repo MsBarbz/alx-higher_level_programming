@@ -1,8 +1,17 @@
 #!/usr/bin/python3
-def print_square(size):
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
-    for index in range(size):
-        print("x" * size)
+"""text indent"""
+
+
+def text_indentation(text):
+    """text indent"""
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+
+    for delimeter in "?:.":
+        words = (delimeter + "\n\n").join(
+                [index.strip(" ") for index in words.split(delimeter)])
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/5-text_indentation.txt")
